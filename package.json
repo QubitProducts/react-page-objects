@@ -1,0 +1,41 @@
+{
+  "name": "react-page-object",
+  "version": "0.0.0",
+  "description": "A page object for react",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:qubitdigital/react-page-object.git"
+  },
+  "devDependencies": {
+    "browserify": "^5.12.0",
+    "chai": "^1.9.1",
+    "jsxcs": "^0.2.1",
+    "jsxhint": "^0.7.0",
+    "karma": "^0.12.24",
+    "karma-bro": "0.10.0",
+    "karma-chrome-launcher": "^0.1.5",
+    "karma-cli": "0.0.4",
+    "karma-mocha": "^0.1.9",
+    "karma-spec-reporter": "0.0.13",
+    "lodash-node": "^2.4.1",
+    "mocha": "^1.21.4",
+    "react": "^0.12.0",
+    "reactify": "^0.17.0",
+    "sinon": "^1.10.3",
+    "sinon-chai": "^2.5.0",
+    "uglify-js": "^2.4.15"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/QubitProducts/react-page-object/master/LICENSE"
+    }
+  ],
+  "peerDependencies": {
+    "react": "^0.12.0"
+  }
+}
