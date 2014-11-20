@@ -20,6 +20,7 @@ build: lint
 	@cat dist/react-page-object.js | $(BIN)/uglifyjs > dist/react-page-object.min.js
 
 release: test build
+	@git add dist && (git diff --exit-code > /dev/null || git commit -m "Rebuilt")
 	@npm version patch
 	@git push origin master && git push --tags
 	@npm publish
