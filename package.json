@@ -1,6 +1,6 @@
 {
   "name": "react-page-object",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A page object for react",
   "main": "index.js",
   "scripts": {
