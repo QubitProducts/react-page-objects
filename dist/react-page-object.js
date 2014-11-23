@@ -55,7 +55,7 @@ _.each(methods, function(method) {
 });
 
 module.exports = ElementCollection;
-},{"underscore":177}],2:[function(require,module,exports){
+},{"underscore":178}],2:[function(require,module,exports){
 var _ = require("underscore");
 var ElementCollection = require("./elementCollection");
 var defaultElement = require("./elements/baseElement");
@@ -95,7 +95,7 @@ function getElementForRef(ref) {
 }
 
 module.exports = elementFactory;
-},{"./elementCollection":1,"./elements/baseElement":3,"./elements/button":4,"./elements/input":6,"./elements/select":10,"underscore":177}],3:[function(require,module,exports){
+},{"./elementCollection":1,"./elements/baseElement":3,"./elements/button":4,"./elements/input":6,"./elements/select":10,"underscore":178}],3:[function(require,module,exports){
 var _ = require("underscore");
 var extend = require("../extend");
 
@@ -150,7 +150,7 @@ BaseElement.extend = function (protoProps) {
 };
 
 module.exports = BaseElement;
-},{"../extend":13,"react/addons":16,"underscore":177}],4:[function(require,module,exports){
+},{"../extend":13,"react/addons":16,"underscore":178}],4:[function(require,module,exports){
 var BaseElement = require("./baseElement");
 var clickable = require("./mixins/clickable");
 
@@ -294,7 +294,8 @@ function extend(protoProps, staticProps) {
 }
 
 module.exports = extend;
-},{"underscore":177}],14:[function(require,module,exports){
+},{"underscore":178}],14:[function(require,module,exports){
+var React = require("react");
 var _ = require("underscore");
 var extend = require("./extend");
 var elementFactory = require("./elementFactory");
@@ -307,6 +308,8 @@ function PageObject(options) {
   } else {
     this.element = getElement(this);
   }
+
+  this.dispose = dispose;
 
   _.each(this.element.refs, function (ref, name) {
     this[name] = elementFactory(ref, name, this.elements);
@@ -331,6 +334,10 @@ function PageObject(options) {
 
     return utils.renderIntoDocument(component);
   }
+
+  function dispose() {
+    React.unmountComponentAtNode(this.element.getDOMNode().parentNode);
+  }
 }
 
 function isReactInstance(obj) {
@@ -346,7 +353,7 @@ PageObject.prototype = {
 PageObject.extend = extend;
 
 module.exports = PageObject;
-},{"./elementFactory":2,"./extend":13,"react/addons":16,"underscore":177}],15:[function(require,module,exports){
+},{"./elementFactory":2,"./extend":13,"react":177,"react/addons":16,"underscore":178}],15:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -20333,6 +20340,9 @@ module.exports = warning;
 
 }).call(this,require('_process'))
 },{"./emptyFunction":137,"_process":15}],177:[function(require,module,exports){
+module.exports = require('./lib/React');
+
+},{"./lib/React":46}],178:[function(require,module,exports){
 //     Underscore.js 1.7.0
 //     http://underscorejs.org
 //     (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
