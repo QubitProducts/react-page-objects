@@ -2,7 +2,7 @@
 
 [React](http://facebook.github.io/react/) [page objects](https://code.google.com/p/selenium/wiki/PageObjects) make it easy to test [react](http://facebook.github.io/react/) components.
 
-They wrap your component, injecting them into them the DOM and making any [refs](http://facebook.github.io/react/docs/more-about-refs.html) available with a simple object orientated API.
+They manage injecting components into the DOM (as well as removing them). Any [refs](http://facebook.github.io/react/docs/more-about-refs.html) in the component can then be manipulated using a simple object orientated API.
 
 ##Tutorial
 
