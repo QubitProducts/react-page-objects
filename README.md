@@ -109,6 +109,9 @@ var item = new NewsFeedItem({
     }
   }
 });
+
+expect(item.title).to.equal("Foo");
+expect(item.user.name).to.equal("Foo Bar");
 ```
 
 If you have an array of page objects, you should add a ref to the parent element and then in elements hash the value should be an array containing the page object type.
