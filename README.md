@@ -12,10 +12,10 @@ var emailNode = element.email.getDOMNode();
 
 expect(emailNode.value).to.equal("foo@bar.com");
 
-emailNode.value = "bar@baz.com";
+element.password.getDOMNode().value = "bar@baz.com";
 TestUtils.Simulate.change(element.password.getDOMNode(), {
   target: {
-    value: "bar@baz.com"
+    value: "password"
   }
 });
 
