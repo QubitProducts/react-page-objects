@@ -2,11 +2,39 @@
 
 [React](http://facebook.github.io/react/) [page objects](https://code.google.com/p/selenium/wiki/PageObjects) make it easy to test [react](http://facebook.github.io/react/) components.
 
-They manage injecting components into the DOM (as well as removing them). Any [refs](http://facebook.github.io/react/docs/more-about-refs.html) in the component can then be manipulated using a simple object orientated API.
+React gives you some useful utilities for testing React components however they lead to verbose code that clutters your tests.
+
+```js
+var TestUtils = require("react/addons").addons.TestUtils;
+
+var element = TestUtils.renderIntoDocument(<LoginPage />);
+var emailNode = element.email.getDOMNode();
+
+expect(emailNode.value).to.equal("foo@bar.com");
+
+emailNode.value = "bar@baz.com";
+TestUtils.Simulate.change(element.password.getDOMNode(), {
+  target: {
+    value: "bar@baz.com"
+  }
+});
+
+TestUtils.Simulate.click(element.login.getDOMNode());
+```
+
+React Page Objects hides this complexity from you providing a simple API
+
+```
+var page = new PageObject(<LoginPage />);
+
+expect(page.email.value).to.equal("foo@bar.com");
+page.email.value = "bar@baz.com";
+page.login.click();
+```
 
 ##Tutorial
 
-Say you have a React component
+Say you have a login page built in React you want to test
 
 ```js
 var LoginPage = React.createClass({
@@ -37,7 +65,9 @@ var LoginPage = React.createClass({
 });
 ```
 
-If you pass an instance of a component into a page object, any [refs](http://facebook.github.io/react/docs/more-about-refs.html) will be available with a simple API
+To easily reference specific elements within the component, you should add [refs](http://facebook.github.io/react/docs/more-about-refs.html) to them. 
+
+If you then pass an instance of the component into a page object, any refs will be accessible. You can then get the values of the elements and simulate events (e.g. click, select, etc).
 
 ```js
 var page = new PageObject(<LoginPage />);
@@ -47,7 +77,7 @@ page.password.value = "password";
 page.login.click();
 ```
 
-You can also create a custom page object type using ``PageObject#extend``
+You can also create a custom type for a page using ``PageObject#extend``
 
 ```js
 var LoginPageObject = PageObject.extend({
@@ -66,7 +96,7 @@ var page = new LoginPageObject();
 page.loginAs("foo@bar.com", "password");
 ```
 
-The ``elements`` hash map allows you to specify the page object type of any [refs](http://facebook.github.io/react/docs/more-about-refs.html) allowing to build more complex pages. They key in the ``elements`` has is the name of the [ref](http://facebook.github.io/react/docs/more-about-refs.html) and the value is the page object type.
+The ``elements`` hash map allows you to specify the page object type of any [refs](http://facebook.github.io/react/docs/more-about-refs.html) allowing you to build more complex pages. They key in the ``elements`` is the name of the [ref](http://facebook.github.io/react/docs/more-about-refs.html) and the value is the page object type.
 
 ```js
 var NewsFeedItem = React.createClass({
