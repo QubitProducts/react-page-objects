@@ -22,7 +22,7 @@ TestUtils.Simulate.change(element.password.getDOMNode(), {
 TestUtils.Simulate.click(element.login.getDOMNode());
 ```
 
-React Page Objects hides this complexity from you providing a simple API
+React Page Objects hides this complexity by providing a simpler API
 
 ```
 var page = new PageObject(<LoginPage />);
