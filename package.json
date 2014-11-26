@@ -1,6 +1,6 @@
 {
   "name": "react-page-objects",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Page Object pattern for testing React components",
   "main": "index.js",
   "scripts": {
