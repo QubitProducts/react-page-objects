@@ -115,8 +115,8 @@ var NewsFeedItemPageObject = PageObject.extend({
   elements: {
     user: PageObject
   },
-  getComponent: function () {
-    return <NewsFeed />;
+  getComponent: function (props) {
+    return <NewsFeed {...props} />;
   }
 });
 
@@ -130,13 +130,11 @@ var User = React.createClass({
   }
 });
 
-var item = new NewsFeedItem({
-  props: {
-    item: {
-      user: { name: "Foo Bar" },
-      title: "Foo",
-      body: "Lorum Ipsum"
-    }
+var item = new NewsFeedItemPageObject({
+  item: {
+    user: { name: "Foo Bar" },
+    title: "Foo",
+    body: "Lorum Ipsum"
   }
 });
 
@@ -170,15 +168,13 @@ var NewsFeedPageObject = PageObject.extend({
   elements: {
     items: [NewsFeedItemPageObject]
   },
-  getComponent: function () {
-    return <NewsFeed />;
+  getComponent: function (props) {
+    return <NewsFeed {...props} />;
   }
 });
 
 var newsFeed = new NewsFeedPageObject({
-  props: {
-    user: "foo"
-  }
+  user: "foo"
 });
 
 expect(newsFeed.items).to.not.be.empty;
