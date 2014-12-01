@@ -305,12 +305,6 @@ function PageObject(props) {
     this.element = props;
   } else {
     this.element = getElement(this);
-
-    var subject = this.element.refs.__subject__;
-
-    if (subject) {
-      this.element = subject;
-    }
   }
 
   this.dispose = dispose;
@@ -347,7 +341,7 @@ function isReactInstance(obj) {
 
 PageObject.prototype = {
   getComponent: function () {
-    console.error("Implement PageObject#getComponent");
+    console.warn("Implement PageObject#getComponent");
   }
 };
 
