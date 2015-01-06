@@ -38,6 +38,8 @@
   ],
   "files": [
     "lib",
+    "dist",
+    "elements",
     "LICENSE",
     "index.js",
     "README.md"
