@@ -1,7 +1,7 @@
 var _ = require("underscore");
-var extend = require("../extend");
+var extend = require("../lib/extend");
 
-function BaseElement (ref, name) {
+function BaseElement(ref, name) {
   this.ref = ref;
   this.name = name;
   this.simulate = require("react/addons").addons.TestUtils.Simulate;

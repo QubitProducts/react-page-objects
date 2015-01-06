@@ -1,4 +1,4 @@
-var BaseElement = require("../baseElement");
+var BaseElement = require("../base");
 
 module.exports = {
   getDOMNode: function () {

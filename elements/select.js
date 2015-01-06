@@ -1,5 +1,5 @@
+var BaseElement = require("./base");
 var input = require("./utils/isInput");
-var BaseElement = require("./baseElement");
 var valueable = require("./mixins/valueable");
 var inputable = require("./mixins/inputable");
 

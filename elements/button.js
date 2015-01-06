@@ -1,4 +1,4 @@
-var BaseElement = require("./baseElement");
+var BaseElement = require("./base");
 var clickable = require("./mixins/clickable");
 
 var Button = BaseElement.extend({
