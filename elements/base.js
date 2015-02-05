@@ -35,7 +35,15 @@ function BaseElement(ref, name) {
 
 BaseElement.prototype = {
   getDOMNode: function () {
+     // react-bootstrap makes input node accessible via getInputDOMNode
+    if (this.ref.getInputDOMNode) {
+      return this.ref.getInputDOMNode();
+    }
+
     return this.ref.getDOMNode();
+  },
+  click: function () {
+    this.simulate.click(this.getDOMNode());
   }
 };
 
