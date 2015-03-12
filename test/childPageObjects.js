@@ -24,8 +24,6 @@ var NewsFeedPageObject = PageObject.extend({
 });
 
 describe("Child page objects", function () {
-  describe("when the custom element is an empty array", function () {
-  });
 
   describe("when the custom element is an array containing a page object", function () {
     var page, expectedNewsFeedItems;

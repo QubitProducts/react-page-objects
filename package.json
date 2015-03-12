@@ -10,25 +10,27 @@
     "type": "git",
     "url": "git@github.com:QubitProducts/react-page-objects.git"
   },
+  "dependencies": {
+    "underscore": "^1.7.0"
+  },
   "devDependencies": {
-    "browserify": "^5.12.0",
+    "babelify": "^5.0.0",
+    "browserify": "^9.0.0",
     "chai": "^1.9.1",
-    "jsxcs": "^0.2.1",
-    "jsxhint": "^0.7.0",
+    "esprima-fb": "^12001.1.0-dev-harmony-fb",
+    "jscs": "^1.11.3",
+    "jsxhint": "^0.12.1",
     "karma": "^0.12.24",
     "karma-bro": "0.10.0",
     "karma-chrome-launcher": "^0.1.5",
     "karma-cli": "0.0.4",
     "karma-mocha": "^0.1.9",
     "karma-spec-reporter": "0.0.13",
-    "lodash-node": "^2.4.1",
     "mocha": "^1.21.4",
-    "react": "^0.12.1",
-    "reactify": "^0.17.0",
+    "react": "^0.13.0",
     "sinon": "^1.10.3",
     "sinon-chai": "^2.5.0",
-    "uglify-js": "^2.4.15",
-    "underscore": "^1.7.0"
+    "uglify-js": "^2.4.15"
   },
   "licenses": [
     {
@@ -50,8 +52,12 @@
     "object",
     "testing"
   ],
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
   "peerDependencies": {
-    "react": "^0.12.0",
-    "underscore": "^1.7.0"
+    "react": "^0.13.0"
   }
 }

@@ -11,7 +11,7 @@ test-watch: lint
 	@$(BIN)/karma start
 
 lint: bootstrap
-	@$(BIN)/jsxcs $(SRC);
+	@$(BIN)/jscs --esprima=esprima-fb $(SRC);
 	@$(BIN)/jsxhint $(SRC);
 
 build: lint

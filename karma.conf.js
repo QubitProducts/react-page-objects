@@ -4,7 +4,7 @@ module.exports = function(config) {
     frameworks: ["mocha", "browserify"],
     browserify: {
       debug: true,
-      transform: ["reactify"]
+      transform: ["babelify"]
     },
     files: [
       "index.js",
