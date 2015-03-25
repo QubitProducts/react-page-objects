@@ -6,7 +6,7 @@ var AuthService = require("./services/authService");
 var LoginPage = React.createClass({
   render: function () {
     return (
-      <div className="login-page">
+      <div className="login-page" id="login-page">
 
         <input ref="email"
                type="text"
