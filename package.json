@@ -11,10 +11,10 @@
     "url": "git@github.com:QubitProducts/react-page-objects.git"
   },
   "dependencies": {
+    "babelify": "^5.0.0",
     "underscore": "^1.7.0"
   },
   "devDependencies": {
-    "babelify": "^5.0.0",
     "browserify": "^9.0.0",
     "chai": "^1.9.1",
     "esprima-fb": "^12001.1.0-dev-harmony-fb",
