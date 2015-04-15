@@ -1,3 +1,5 @@
+**Depreciated** Use [react-test-tree](https://github.com/qubitproducts/react-test-tree) instead, its an evolution of react-page-objects which should be easy for you to migrate to
+
 # React Page Objects
 
 [React](http://facebook.github.io/react/) [page objects](https://code.google.com/p/selenium/wiki/PageObjects) make it easy to test [react](http://facebook.github.io/react/) components.
