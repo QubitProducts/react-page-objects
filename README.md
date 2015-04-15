@@ -1,4 +1,6 @@
-**Depreciated** Use [react-test-tree](https://github.com/qubitproducts/react-test-tree) instead, its an evolution of react-page-objects which should be easy for you to migrate to
+##Depreciated: Use [react-test-tree](https://github.com/qubitproducts/react-test-tree) instead, its an evolution of react-page-objects which should be easy for you to migrate to
+
+----
 
 # React Page Objects
 
